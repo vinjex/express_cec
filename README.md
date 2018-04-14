@@ -36,6 +36,7 @@ node index.js
 #### Chromium Kiosk mode on DietPi with LXDE
 ````
 apt install chromium-browser
+apt install unclutter
 cd
 git clone https://github.com/vinjex/express_cec.git
 cd ./express_cec
@@ -43,6 +44,7 @@ npm i
 nano /etc/xdg/lxsession/LXDE/autostart
 
 ### Insert the following lines at the end of the file
+@unclutter -idle 0
 @chromium-browser --incognito --no-sandbox -test-type --kiosk [URL of a website]
 @node [PATH to express_cec's index.js]
 ###
